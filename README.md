@@ -56,7 +56,7 @@ Docker (Optional for containerization)
 
 Setup Instructions:
 Clone the Repository:
-git clone https://github.com/yourusername/langui.git
+git clone <https://github.com/yourusername/langui.git>
 cd langui
 
 Backend Setup (Python):
@@ -137,5 +137,5 @@ This project is licensed under the Alx License - see the LICENSE file for detail
 
 Contact
 Project Maintainer: Silas Edet
-Email: silasedetsnr@example.com>
+Email: <silasedetsnr@example.com>>
 GitHub Repository: Langui
