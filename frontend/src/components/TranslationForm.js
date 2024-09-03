@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TranslationForm.css';
+import '../styles/TranslationForm.css';
 
 function TranslationForm() {
     const [phrase, setPhrase] = useState('');
