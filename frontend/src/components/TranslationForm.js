@@ -2,15 +2,24 @@ import React, { useState } from 'react';
 import '../styles/TranslationForm.css';
 
 function TranslationForm() {
+    // State variables for phrase input, selected language, and translation result
     const [phrase, setPhrase] = useState('');
     const [language, setLanguage] = useState('es');
     const [translation, setTranslation] = useState('');
 
+    // Handle form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        fetch(`https://www.fourtonfish.com/hellosalut/hello/?lang=${language}`)
+        // Fetch translation from mymemory.translated.net API
+        fetch(`https://api.mymemory.translated.net/get?q=${encodeURIComponent(phrase)}&langpair=en|${language}`)
             .then(response => response.json())
-            .then(data => setTranslation(data.hello))
+            .then(data => {
+                if (data.responseData) {
+                    setTranslation(data.responseData.translatedText);
+                } else {
+                    setTranslation('Error: Unable to fetch translation.');
+                }
+            })
             .catch(error => setTranslation('Error fetching translation.'));
     };
 
@@ -18,6 +27,7 @@ function TranslationForm() {
         <div className="translation-container">
             <h1>Langui Translation Tool</h1>
             <form onSubmit={handleSubmit}>
+                {/* Phrase input field */}
                 <label htmlFor="phrase-input">Enter your phrase:</label>
                 <input
                     type="text"
@@ -25,7 +35,10 @@ function TranslationForm() {
                     value={phrase}
                     onChange={(e) => setPhrase(e.target.value)}
                     placeholder="Type a phrase..."
+                    required
                 />
+                
+                {/* Language selection dropdown */}
                 <label htmlFor="language-select">Choose a language:</label>
                 <select
                     id="language-select"
@@ -38,9 +51,15 @@ function TranslationForm() {
                     <option value="it">Italian</option>
                     <option value="zh">Chinese</option>
                 </select>
+                
+                {/* Submit button */}
                 <button type="submit">Translate</button>
             </form>
-            <div id="translation-result">Translation: {translation}</div>
+            
+            {/* Translation result display */}
+            <div id="translation-result">
+                {translation && <p>Translation: {translation}</p>}
+            </div>
         </div>
     );
 }

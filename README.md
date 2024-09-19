@@ -1,4 +1,4 @@
-Langui: Connecting people through Language
+# Langui: Connecting people through Language
 
 Table of Contents
 
@@ -93,8 +93,7 @@ Engage with the Community: Share your learning journey, ask questions, and pract
 Track Progress: Use the dashboard to monitor your learning achievements and set new goals.
 
 Project Structure
-plaintext
-Copy code
+
 langui/
 │
 ├── backend/               # Backend codebase (Python or Node.js)
@@ -119,9 +118,9 @@ langui/
 ├── README.md              # This file
 └── ...
 
-
 Contributing
 We welcome contributions to enhance Langui! Please follow these steps:
+
 1. Fork the repository to your GitHub account.
 2. Create a new branch with a descriptive name:
 git checkout -b feature/your-feature-name
@@ -137,5 +136,9 @@ This project is licensed under the Alx License - see the LICENSE file for detail
 
 Contact
 Project Maintainer: Silas Edet
+LinkedIn: <https://www.linkedin.com/in/silas-edet-061262276>
 Email: <silasedetsnr@example.com>>
-GitHub Repository: Langui
+GitHub Repository: <https://github.com/BrotherSilas/Langui>
+
+How the site looks
+![alt text](Screenshot_3-9-2024_121954_127.0.0.1-1.jpeg)
